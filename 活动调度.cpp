@@ -29,6 +29,6 @@ int main(){
 			ClassRoomCount=max(ClassRoomCount,TempCount);
 		}
 	}
-	cout<<ClassRoomCount;
+	cout<<ClassRoomCount<<endl;
 	return 0; 
 } 
