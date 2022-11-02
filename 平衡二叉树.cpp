@@ -85,12 +85,12 @@ BiTree insert(char c,BiTree T){
             T->LeftChild=insert(c,T->LeftChild);
             if(height(T->LeftChild)-height(T->RightChild)==2){
                 if(c<T->LeftChild->data)T=singleRotationLL(T);
-                else T=singleRotationLR(T);
+                else T=doubleRotationLR(T);
             }
         }
         else if(c>T->data){
             T->RightChild=insert(c,T->RightChild);
-            if(height(T->RightChild)-hieght(T->LeftChild)==2){
+            if(height(T->RightChild)-height(T->LeftChild)==2){
                 if(c>T->RightChild->data)T=singleRotationRR(T);
                 else T=doubleRotationRL(T);
             }
@@ -114,7 +114,6 @@ int main(){
     printf("Preorder: "); PreOrder(root); printf("\n");
     printf("Inorder: "); InOrder(root); printf("\n");
     printf("Postorder: "); PostOrder(root); printf("\n");
-    printf("Tree: \n"); turnTree90DegreeLeft(root,1);
+    printf("Tree:\n"); turnTree90DegreeLeft(root,1);
     return 0;
 }
-
